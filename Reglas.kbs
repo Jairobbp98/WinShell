@@ -1,0 +1,41 @@
+Asks
+Ask Fiebre:
+'Tiene Fiebre?'
+Domain 'si','no'
+
+Ask Diarrea:
+'Tiene Diarrea?'
+domain 'si','no'
+
+Ask DolorAbdominal:
+'Tiene Dolor Abdominal?'
+domain 'si','no'
+
+Ask ManchasenlaPiel:
+'Tiene Manchas en la Piel?'
+Domain 'si','no'
+
+Ask ExantemaenelRostro:
+'Tiene Exantema en el Rostro?'
+Domain 'si','no'
+
+Rules
+Rule 1
+if Fiebre = 'si' and Diarrea = 'si' and DolorAbdominal = 'si'
+then enfermedad:='Tiene'
+Actions
+Display 'El paciente presenta Sarampion'
+End;
+
+Rule 2
+if Fiebre = 'si' and Diarrea = 'no' and DolorAbdominal = 'si' 
+and ManchasenlaPiel = 'si' and ExantemaenelRostro = 'si' 
+then enfermedad:='Tiene'
+Actions
+Display 'El paciente tiene Megaritema Epidemico'
+End;
+
+Actions
+Reset all
+Find enfermedad
+End.
