@@ -11,13 +11,212 @@ Ask DolorAbdominal:
 'Tiene Dolor Abdominal?'
 domain 'si','no'
 
+Ask Catarro:
+‘Tiene Caterro?’
+Domain ‘si’,’no’
+
+Ask Tos:
+‘Tiene Tos?’
+Domain ‘si’,’no’
+
 Ask ManchasenlaPiel:
 'Tiene Manchas en la Piel?'
 Domain 'si','no'
 
-Ask ExantemaenelRostro:
+Ask ExantemaEnelRostro:
 'Tiene Exantema en el Rostro?'
 Domain 'si','no'
+
+Ask Faringitis:
+'Tiene Faringitis?'
+Domain 'si','no'
+
+Ask ErosionesEnElPaladar:
+‘Tiene erosiones en el paladar?’
+Domain ‘si’,’no’
+
+Ask ErosionesEnLaFaringe:
+‘Tiene erosiones en la faringe?’
+Domain ‘si’,’no’
+
+Ask ErosionesEnLaLengua:
+‘Tiene erosiones en la lengua?’
+Domain ‘si’,’no’
+
+Ask LesionesCutaneas:
+‘Presenta lesiones cutaneas?’
+Domain ‘si’,’no’
+
+Ask LesionesEnMucosas:
+‘Presenta lesiones en las mucosas?’
+Domain ‘si’,’no’
+
+Ask LesionesNeurologicas:
+‘Presenta algun tipo de lesiones neurologicas?’
+Domain ‘si’,’no’
+
+Ask GargantaColorada:
+‘Presenta color en la garganta?’
+Domain ‘si’,’no’
+
+Ask Inflamacion:
+‘Presenta inflamacion?’
+Domain ‘si’,’no’
+
+Ask Hinchazon:
+‘Presenta alguna hinchazon?’
+Domain ‘si’,’no’
+
+Ask Ictericia:
+‘Presenta lctericia?’
+Domain ‘si’,’no’
+
+Ask CrecimientoLento:
+‘Presenta algun tipo de crecimiento lento?’
+Domain ‘si’,’no’
+
+Ask Vomitos:
+‘Ah vomitado ultimamente?’
+Domain ‘si’,’no’
+
+Ask Flema:
+‘Presenta flema?’
+Domain ‘si’,’no’
+
+Ask EnrojecimientoOcular:
+‘Presenta enrojecimiento en los ojos?’
+Domain ‘si’,’no’
+
+Ask SecrecionOcular:
+‘Presenta secrecion en los ojos?’
+Domain ‘si’,’no’
+Ask FaltaDeEnergia:
+‘Presenta falta de energia?’
+Domain ‘si’,’no’
+
+Ask Palidez:
+‘El paciente presenta palidez?’
+Domain ‘si’,’no’
+
+Ask GanasDeComerTierra:
+‘Al paciente le dan ganas de comer tierra?’
+Domain ‘si’,no’
+
+Ask DolorDeGarganta:
+‘Presenta dolor de garganta?’
+Domain ‘si’,no’
+
+Ask ParalisisDelCuerpo:
+‘Presenta paralisis en alguna parte del cuerpo?’
+Domain ‘si’,no’
+
+Ask DolorMuscular:
+‘Presenta dolor en los musculos?’
+Domain ‘si’,’no’
+
+Ask RigidezDeLaNuca:
+‘Presenta rigidez en la nuca’
+Domain ‘si’,’no’
+
+Ask Convulsiones:
+‘El paciente ah presentado convulsiones?’
+Domain ‘si’,’no’
+
+Ask Ronchas:
+‘El paciente tiene ronchas?’
+Domain ‘si’,’no’
+
+Ask AmpollasConPus:
+‘Presenta ampollas con pus?’
+Domain ‘si’,no’
+
+Ask AmpollasConCostras:
+‘Presenta ampollas con costras?’
+Domain ‘si’,’no’
+
+Ask PerdidaDeCueroCabelludo:
+‘Ah perdido cabello estos ultimos dias?’
+Domain ‘si’,’no’
+
+Ask DeclororacionDeUnas:
+‘Presenta declororacion en las unas?’
+Domain ‘si’,’no’
+
+Ask HinchazonDebajoDeLaOrejas:
+‘Presenta hinchazon debajo de las orejas?’
+Domain ‘si’,no’
+
+Ask DolorAlComer:
+‘Presenta dolor al comer?’
+Domain ‘si’,’no’
+
+Ask Sarpullido:
+‘El paciente presenta sarpullido?’
+Domain ‘si’,no’
+
+Ask Ampollas:
+‘Presenta ampollas?’
+Domain ‘si’,’no’
+
+Ask ComezonIntensa:
+‘Presenta Comezon de manera constante?’
+Domain ‘si’,no’
+
+Ask Nauseas:
+‘Presenta nauseas?’
+Domain ‘si’,no’
+
+Ask EsterotoresBronquiales:
+‘Presenta Esterotores Bronquiales?’
+Domain ‘si’,’no’
+
+Ask PerdidaDePeso:
+‘Presenta perdida de peso?’
+Domain ‘si’,’no’
+
+Ask DiarreaConSangre:
+‘Presenta diarrea con sangre?’
+Domain ‘si’.’no’
+
+Ask UlceraOcasional:
+‘Presenta ulcera ocasional?’
+Domain ‘si’,’no’
+
+Ask ProlapsoRectal:
+‘Usted tiene Prolapso rectal?’
+Domain ‘si’,’no’
+
+Ask Anemia:
+‘El paciente presenta anemia?’
+Domain ‘si’,’no’
+
+Ask Nerviosismo:
+‘El paciente presenta nerviosismo?’
+Domain ‘si’,’no’
+
+Ask Insomnio:
+‘El paciente presenta insomnio?’
+Domain ‘si’,’no’
+
+Ask Insomnio:
+‘El paciente presenta insomnio?’
+Domain ‘si’,’no’
+
+Ask Irritabilidad:
+‘El paciente presenta irritabilidad?’
+Domain ‘si’,’no’
+
+Ask Vulvitis:
+‘El paciente presenta vulvitis?’
+Domain ‘si’,’no’
+
+Ask Vulvovaginitis:
+‘El paciente presenta vulvovaginistis?’
+Domain ‘si’,’no’
+
+Ask Salpingitis:
+‘El paciente presenta salpingitis?’
+Domain ‘si’,’no’
 
 Rules
 Rule 1
@@ -28,11 +227,109 @@ Display 'El paciente presenta Sarampion'
 End;
 
 Rule 2
+if Fiebre = 'si' and Catarro = 'si' and Tos = 'si' 
+and Catarro  ManchasenlaPiel = 'si' 
+then enfermedad:='Tiene'
+Actions
+Display 'El paciente tiene Rubiola'
+End;
+
+Rule 3
 if Fiebre = 'si' and Diarrea = 'no' and DolorAbdominal = 'si' 
 and ManchasenlaPiel = 'si' and ExantemaenelRostro = 'si' 
 then enfermedad:='Tiene'
 Actions
 Display 'El paciente tiene Megaritema Epidemico'
+End;
+
+Rule 4
+if Fiebre = 'no' and Diarrea = 'no' and DolorAbdominal = 'no' 
+and ManchasenlaPiel = 'si' and ExantemaenelRostro = 'si' and Faringitis = 'si' 
+then enfermedad:='Tiene'
+Actions
+Display 'El paciente tiene Exantema Subito'
+End;
+
+
+Rule 5
+if Faringitis = 'si' and ErosionesEnElPaladar = 'si' and ErosionesEnLaFaringe = 'si' 
+and ErosionesEnLaLengua = 'si' 
+then enfermedad:='Tiene'
+Actions
+Display 'El paciente tiene Acrodermitis'
+End;
+
+Rule 6
+if LesionesCutaneas = 'si' and LesionesEnMucosas = 'si' and LesionesNeurologicas = 'si' 
+then enfermedad:='Tiene'
+Actions
+Display 'El paciente tiene Herpes Simple Tipo 1'
+End;
+
+Rule 7
+if LesionesEnMucosas = 'si' and LesionesNeurologicas = 'si' 
+then enfermedad:='Tiene'
+Actions
+Display 'El paciente tiene Herpes Simple Tipo 2'
+End;
+
+Rule 8
+if Fiebre = 'si' and LesionesCutaneas = 'si' 
+then enfermedad:='Tiene'
+Actions
+Display 'El paciente tiene Varicela-Zoster'
+End;
+
+Rule 9
+if Fiebre = 'si' and LesionesCutaneas = 'si' 
+then enfermedad:='Tiene'
+Actions
+Display 'El paciente tiene Amigdalitis'
+End;
+
+Rule 10
+if Fiebre = 'si' and Diarrea = 'si' and Hinchazon = 'si' and CrecimientoLento = 'si'
+then enfermedad:='Tiene'
+Actions
+Display 'El paciente tiene Anemia Drepanocitica'
+End;
+
+Rule 11
+if Fiebre = 'si' and Catarro = 'si' and Tos = 'si' and Vomitos = 'si' and Flema = 'si'
+then enfermedad:='Tiene'
+Actions
+Display 'El paciente tiene Tos Ferina'
+End;
+
+Rule 12
+if Inflamacion = 'si' and Hinchazon = 'si' and EnrojecimientoOcular = 'si' and 
+SecrecionOcular = 'si'
+then enfermedad:='Tiene'
+Actions
+Display 'El paciente tiene Conjuntivitis'
+End;
+
+Rule 13
+if Catarro = 'si' and Hinchazon = 'si' and CrecimientoLento = 'si' FaltaDeEnergia = 'true'
+Palidez = 'si' and GanasDeComerTierras = 'si'
+then enfermedad:='Tiene'
+Actions
+Display 'El paciente tiene Desnutricion'
+End;
+
+Rule 14
+if Fiebre = 'si' and  Catarro = 'si' and DolordeGarganta = 'si'
+then enfermedad:='Tiene'
+Actions
+Display 'El paciente tiene Difteria'
+End;
+
+Rule 15
+if Fiebre = 'si' and Diarrea = 'si' and  Catarro = 'si' and Vomitos= 'si'
+and ParalisisDelCuerpo = 'si' and DolorMuscular = 'si'
+then enfermedad:='Tiene'
+Actions
+Display 'El paciente tiene Difteria'
 End;
 
 Actions
