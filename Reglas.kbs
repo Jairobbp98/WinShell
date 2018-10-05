@@ -8,19 +8,19 @@ Ask Diarrea:
 domain 'si','no'
 
 Ask DolorAbdominal:
-'Tiene Dolor Abdominal?'
+'Tiene DolorAbdominal?'
 domain 'si','no'
 
 Rules
 Rule 1
-if Fiebre = 'si' and Diarrea = 'si' and DolorAbdominal = 'si'
+if Fiebre = 'si' and Diarrea = 'si' and Diarrea = 'si'
 then Sarampion:='Tiene'
 Actions
 Display 'El paciente presenta Sarampion'
 End;
 
 Rule 2
-if Fiebre = 'no' and Diarrea = 'no' DolorAbdominal = 'no'
+if Fiebre = 'no' and Diarrea = 'no' and Diarrea = 'no'
 then Sarampion:='No Tiene'
 Actions
 Display 'El paciente no tiene Sarampion'
